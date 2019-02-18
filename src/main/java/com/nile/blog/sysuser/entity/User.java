@@ -12,17 +12,17 @@ import javax.persistence.Id;
  * @since 2019-2-16
  */
 @Entity
+@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 public class User {
     @Id
+    @GeneratedValue(generator = "jpa-uuid")
+    @Column(length = 55)
     private String id;
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)
     private String password;
 
-
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     public String getId() {
         return id;
     }
