@@ -22,9 +22,12 @@ public class UserController {
 
     @GetMapping("/sign_up")
     public String signUp() {
-        return "register";
+        return "/sysuser/index";
     }
-
+    @GetMapping("/sign_in")
+    public String signIn() {
+        return "/sysuser/login";
+    }
 
     @PostMapping("/reg")
     public String register(@RequestParam("username") String username,
